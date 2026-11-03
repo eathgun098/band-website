@@ -143,7 +143,7 @@ function App() {
       ) : (
         <section className="auth-section" id="auth">
           <div className="auth-grid">
-            <div><p className="eyebrow">Профиль </p><h1>Добро<br /><em>пожаловать.</em></h1><p>Войдите или зарегистрируйтесь.</p></div>
+            <div><p className="eyebrow">Профиль музыканта</p><h1>Добро<br /><em>пожаловать.</em></h1><p>Войдите или зарегистрируйтесь, чтобы управлять своим профилем.</p></div>
             <div className="auth-card">
               <div className="auth-tabs"><button className={authMode === 'login' ? 'active' : ''} onClick={() => { setAuthMode('login'); setAuthError('') }}>Войти</button><button className={authMode === 'register' ? 'active' : ''} onClick={() => { setAuthMode('register'); setAuthError('') }}>Регистрация</button></div>
               <form onSubmit={submitAuth}><label>Логин<input name="username" required autoComplete="username" placeholder="your_name" /></label><label>Пароль<input name="password" required minLength={6} type="password" autoComplete={authMode === 'login' ? 'current-password' : 'new-password'} placeholder="••••••••" /></label>{authError && <p className="error-message">{authError}</p>}<button className="primary-button form-submit" type="submit" disabled={authLoading}>{authLoading ? 'Подождите...' : authMode === 'login' ? 'Войти в кабинет' : 'Создать профиль'} <span>↗</span></button></form>
